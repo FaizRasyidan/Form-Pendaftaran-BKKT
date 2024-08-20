@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> REGISTRASI </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+    <body>
+    <div class="container">
+    <div class="title"style="text-align: center;">Open Recruitment Anggota Baru Ormawa Kesenian Tradisional BKKT UNS</div>
+    <div class="content">
+    <div class="user-details">
+        <div class="input-box">
+          <form id="uploadForm" action= "https://script.google.com/macros/s/AKfycbzDe9UpuBrC1V1M_MCoGLqw9FedcGlYYDoYmGl6_qoQ-5MHd_xVTnRqkxa4aQPNjDTk/exec" method="POST">
+          <input type="hidden" value="" name="fileContent" id="fileContent">
+          <input type="hidden" value="" name="filename" id="filename">
+          <div class="user-details">
+            <div class="input-box">
+              <label for="nama" class="form-label">Nama Lengkap</label>
+               <input type="text" id="nama" name="nama" class="form-control" placeholder="Masukan nama lengkap anda" required>
+           </div>
+           <div class="input-box">
+             <label for="nim" class="form-label">NIM</label>
+               <input type="text" id="nim" name="nim" class="form-control" placeholder="Masukan NIM" required>
+             </div>
+          <div class="input-box">
+             <label for="tempat_lahir" class="form-label">Tempat Lahir</label>
+               <input type="text" id="tempat_lahir" name="tempat_lahir" class="form-control" placeholder="Masukan tempat lahir anda" required>
+             </div>
+          <div class="input-box">
+             <label for="tgl_lahir" class="form-label">Tanggal Lahir</label>
+               <input type="date" id="tgl_lahir" name="tgl_lahir" class="form-control" placeholder="Masukan tanggal lahir anda" required>
+             </div>
+             <div class="input-box">
+               <label for="gender" class="form-label">Jenis Kelamin</label>
+               <select type="gender" id="gender" name="gender" class="form-control" placeholder="Pilih jenis kelamin " required>
+                   <option>--Pilih Jenis Kelamin--</option>
+                   <option>Laki-laki</option>
+                   <option>Perempuan</option>
+               </select>
+               </div>
+         <div class="input-box">
+             <label for="fakultas" class="form-label">Fakultas</label>
+             <select type="text" id="fakultas" name="fakultas" class="form-control" required>
+               <option>---Pilih Fakultas---</option>
+               <option>Fakultas Hukum</option>
+               <option>Fakultas Teknik</option>
+               <option>Fakultas Ilmu Budaya</option>
+               <option>Fakultas Kedokteran</option>
+               <option>Fakultas Ekonomi Bisnis</option>
+               <option>Fakultas Keguruan dan Ilmu Pendidikan</option>
+               <option>Fakultas Seni Rupa dan Desain</option>
+               <option>Fakultas Pertanian</option>
+               <option>Fakultas Matematika dan Ilmu Pengetahuan Alam</option>
+               <option>Fakultas Ilmu Sosial dan Politik</option>
+               <option>Fakultas Ilmu Keolahragaan</option>
+               <option>Program Pascasarjana</option>
+               <option>Sekolah Vokasi</option>
+               </select>
+             </div>
+         <div class="input-box">
+             <label for="prodi" class="form-label">Prodi</label>
+               <input type="text" id="prodi" name="prodi" class="form-control" placeholder="Masukan Prodi Anda " required>
+             </div> 
+ 
+         <div class="input-box">
+             <label for="no_wa" class="form-label">Nomor Whatsapp</label>
+               <input type="tel" id="no_wa" name="no_wa" required>
+             </div> 
+ 
+         <div class="input-box">
+             <label for="peminatan" class="form-label">Peminatan</label>
+               <select type="text" id="peminatan" name="peminatan" class="form-control" required>
+                 <option>---Pilih Peminatan---</option>
+                 <option>Tari</option>
+                 <option>Karawitan</option>
+                 </select>
+               </div>
+            </form>
+        <div class="input-box">
+            <label for="file" class="form-label"> File</label>
+            <input required id="attach" name="attach" type="file"/>
+            </div>
+        <div class="button"style="width: 100%;">
+            <input id="btn" type="button" value="KIRIM DATA" class="btn-submit" onclick="UploadFile();" />
+            </div>
+            <div>
+        <a href="https://chat.whatsapp.com/JZ1tacKkSnkKMqMNpC3Acg" class="btn btn-primary"target="_blank">VIEW DATA</a>
+       <button class="btn btn-danger" type="reset">RESET FORM</button>
+           </div>
+    <script>
+    function UploadFile() {
+    var reader = new FileReader();
+    var file = document.getElementById('attach').files[0];
+    reader.onload = function(){
+    document.getElementById('fileContent').value=reader.result;
+    document.getElementById('filename').value=file.name;
+    document.getElementById('uploadForm').submit();
+    }
+    reader.readAsDataURL(file);
+    }
+    </script>
+</body>
+</html>
